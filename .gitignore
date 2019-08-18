@@ -1,0 +1,6 @@
+# ignore all files in the following directories
+bin
+obj
+# no files
+*.Cache
+*.user
