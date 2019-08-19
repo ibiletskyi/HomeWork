@@ -6,7 +6,7 @@ namespace Task9
     {
         static void Main(string[] args)
         {
-            var array = new Figure[] { new Figure(1, 1), new Rectangle(2, 2), new Square(3, 3) };
+            var array = new IDrawable[] { new Figure(), new Rectangle(), new Square() };
             DrawAll(array);
         }
 

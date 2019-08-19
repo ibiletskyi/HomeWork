@@ -10,9 +10,9 @@ namespace Tests
         [Test]
         public void Test1()
         {
-            Assert.AreEqual(new Figure(0, 0).Draw(), "Figure");
-            Assert.AreEqual(new Square(0, 0).Draw(), "Square");
-            Assert.AreEqual(new Rectangle(0, 0).Draw(), "Rectangle");
+            Assert.AreEqual(new Figure(0, 0).Draw(), "I'm the Figure");
+            Assert.AreEqual(new Square(0, 0).Draw(), "I'm the Square");
+            Assert.AreEqual(new Rectangle(0, 0).Draw(), "I'm the Rectangle");
         }
     }
 }

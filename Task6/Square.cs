@@ -7,7 +7,7 @@ namespace Task6
     {
         public override string Draw()
         {
-            var name = this.GetType().Name;
+            var name = "I'm the Square";
             Console.WriteLine(name);
             return name;
         }

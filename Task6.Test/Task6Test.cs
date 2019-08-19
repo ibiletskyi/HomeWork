@@ -9,8 +9,8 @@ namespace Tests
         [Test]
         public void TestDrawReturnsPropertly()
         {            
-            Assert.AreEqual(new Square().Draw(), "Square");
-            Assert.AreEqual(new Rectangle().Draw(), "Rectangle");
+            Assert.AreEqual(new Square().Draw(), "I'm the Square");
+            Assert.AreEqual(new Rectangle().Draw(), "I'm the Rectangle");
         }
     }
 }

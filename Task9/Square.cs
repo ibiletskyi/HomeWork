@@ -3,11 +3,13 @@
 
 namespace Task9
 {
-    public class Square : Figure
+    public class Square : IDrawable
     {
-        public Square(float x, float y) : base(x, y)
+        public string Draw()
         {
-
+            var name = "I'm the Square";
+            Console.WriteLine(name);
+            return name;
         }
     }
 }

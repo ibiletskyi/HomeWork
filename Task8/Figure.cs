@@ -15,7 +15,7 @@ namespace Task8
         }
         public virtual string Draw()
         {
-            var name = this.GetType().Name;
+            var name = "I'm the Figure";
             Console.WriteLine(name);
             return name;
         }

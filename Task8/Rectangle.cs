@@ -9,5 +9,12 @@ namespace Task8
 
         }
 
+        public override string Draw()
+        {
+            var name = "I'm the Rectangle";
+            Console.WriteLine(name);
+            return name;
+        }
+
     }
 }
