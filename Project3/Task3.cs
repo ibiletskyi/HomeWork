@@ -5,29 +5,38 @@ using System.Text;
 
 namespace Project3
 {
-    class Task3
+    public class Task3
     {
-        const int numberOfRecordsPerPage = 5;
-       
-        List<string> StringItems { get; set; }
+        public const int numberOfRecordsPerPage = 5;
+
+
+        public int NumberOfPages
+        {
+            get {
+                int numberOfPages = 0;
+                var numberOfRecords = StringItems.Count;
+                
+                numberOfPages = numberOfRecords / numberOfRecordsPerPage;
+                if ((numberOfRecords == 0) || (numberOfPages * numberOfRecordsPerPage < numberOfRecords))
+                {
+                    numberOfPages += 1;
+                }
+                return numberOfPages;
+            }
+        }
+        public List<string> StringItems { get; set; }
         public Task3()
         {
             var items = new List<string>();
-            for (int i = 0; i <= 100; i++)
+            for (int i = 0; i < 104; i++)
             {
-                items.Add(RandomString(4,false));
+                items.Add(RandomString(4, false));
             }
-
             Console.WriteLine("initial elements count:{0}", items.Count);
-
-            
-            List<string> distinct = items.Where(s => !s.StartsWith('Z')).Distinct().OrderByDescending(p=>p).ToList();
-            
+            List<string> distinct = items.Where(s => !s.StartsWith('Z')).Distinct().OrderByDescending(p => p).ToList();
             Console.WriteLine("distinct elements count:{0}", distinct.Count());
-            
             StringItems = new List<string>(distinct);
         }
-
 
         // Generate a random string with a given size  
         public string RandomString(int size, bool lowerCase)
@@ -45,16 +54,17 @@ namespace Project3
             return builder.ToString();
         }
 
-        public void Draw()
-        {
-            //
-        }
-
         public void DisplayPage(int pageNumber)
         {
-            var elementsToShow = StringItems.GetRange((pageNumber - 1) * numberOfRecordsPerPage, numberOfRecordsPerPage);
-            Console.WriteLine("Display records on page {0}", pageNumber);
-            elementsToShow.ForEach(p => Console.WriteLine(p));
+            // var elementsToShow = StringItems.GetRange((pageNumber - 1) * numberOfRecordsPerPage, numberOfRecordsPerPage);
+            List<string> elementsToShow = new List<string>();
+            for (int i = (pageNumber - 1) * numberOfRecordsPerPage; i < (pageNumber - 1) * numberOfRecordsPerPage + numberOfRecordsPerPage; i++)
+            {
+                if (StringItems.Count > i && pageNumber > 0)
+                    elementsToShow.Add(StringItems[i]);
+            }
+            Console.WriteLine("{0} records on page {1}", elementsToShow.Count, pageNumber);
+            elementsToShow?.ForEach(p => Console.WriteLine(p));
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Project3
 {
-    class Task1
-    {
-        protected List<Person> Persons { get; set; }
+    public class Task1
+    {        
+        public List<Person> Persons { get; set; }               
         public Task1()
         {
             Persons = new List<Person>();
@@ -23,8 +22,13 @@ namespace Project3
             Console.WriteLine("Display {0} stored persons", Persons?.Count);
             foreach (var person in Persons)
             {
-                Console.WriteLine("Nmae:{0} - Age:{1}", person.Name, person.Age);
+                Console.WriteLine("Name:{0} - Age:{1}", person.Name, person.Age);
             }
+        }
+
+        public int GetCountOfPersons()
+        {
+            return Persons.Count;
         }
 
     }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Project3
+﻿namespace Project3
 {
-    class Task2: Task1
+    public class Task2 : Task1
     {
         public Task2() : base()
         {
@@ -13,6 +9,6 @@ namespace Project3
              new Person{ Age = 57, Name = "Edik", PhoneNumbers = new[] { "05034532123", "05034323423", "05034532344" } }
             };
             Persons.AddRange(items);
-        }      
+        }
     }
 }
